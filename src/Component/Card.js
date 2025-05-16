@@ -96,7 +96,7 @@ export default function BasicCard() {
     <Card sx={{ minWidth: 275, backgroundColor: '#f0f8ff', borderRadius: '16px', boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)' }} >
       <CardContent dir={direction} sx={{ fontFamily: local === 'ar' ? 'Cairo, sans-serif' : 'Roboto, sans-serif' }}>
         {/* Header */}
-        <Grid container spacing={2} justifyContent="space-between" alignItems="center" sx={{ mb: 2 }}>
+        <Grid container spacing={1} justifyContent="space-between" alignItems="center" sx={{ mb: 2 }}>
           <Grid item xs={4}>
             <Typography variant="h5" sx={{ fontWeight: 'bold', color: '#00796b' }}>
               {t(temp.name)}
@@ -104,7 +104,10 @@ export default function BasicCard() {
           </Grid>
           <Grid item xs={8} sx={{ textAlign: local === "ar" ? "left" : "right" }}>
             <Typography dir={direction} variant="subtitle1" sx={{ color: '#555', fontFamily: local === 'ar' ? 'Cairo, sans-serif' : 'Roboto, sans-serif' }}>
-              {t(dateState)} 
+              {t(dateState)}
+            </Typography>
+            <Typography variant="subtitle2" sx={{ color: '#777', fontFamily: local === 'ar' ? 'Cairo, sans-serif' : 'Roboto, sans-serif' }}>
+              {time}
             </Typography>
           </Grid>
         </Grid>
@@ -113,12 +116,6 @@ export default function BasicCard() {
 
         {/* Weather Info */}
         <Grid container spacing={2} alignItems="center">
-          <Grid item xs={12}>
-            <Typography variant="h5" sx={{ fontWeight: 'bold', color: '#00796b' }}>
-              {time}
-            </Typography>
-          </Grid>
-
           <Grid item xs={6}>
             <Typography variant="h2" sx={{ fontWeight: 'bold', color: '#00796b' }}>
               {temp.number}°C
@@ -149,6 +146,7 @@ export default function BasicCard() {
                 borderRadius: '8px',
                 boxShadow: 2,
                 background: "#76d0f9"
+                
               }}
             />
           </Grid>
